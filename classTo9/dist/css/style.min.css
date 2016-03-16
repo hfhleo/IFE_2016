@@ -1,22 +1,22 @@
 /*
-Error: Invalid CSS after "...   height: 63px": expected "{", was ";"
-        on line 335 of src/scss/_index.scss
+Error: Invalid CSS after "...      left：100%": expected "{", was ";"
+        on line 334 of src/scss/_index.scss
         from line 5 of src/scss/style.scss
 
+329:     .search-change{
 330:         position: relative;
 331:         .xm-huang{ 
 332:             position: absolute;
 333:             line-height: 59px;
-334:             left：100％；
+334:             left：100%;
 335:             height: 63px;
 336:             width: 41px;
 337:             background-position: -5px -914px;
 338:             color: #fff;
 339:         }
-340:     }
 
 Backtrace:
-src/scss/_index.scss:335
+src/scss/_index.scss:334
 src/scss/style.scss:5
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1179:in `expected'
 /Library/Ruby/Gems/2.0.0/gems/sass-3.4.21/lib/sass/scss/parser.rb:1115:in `expected'
@@ -82,4 +82,4 @@ src/scss/style.scss:5
 body:before {
   white-space: pre;
   font-family: monospace;
-  content: "Error: Invalid CSS after \"...   height: 63px\": expected \"{\", was \";\"\A         on line 335 of src/scss/_index.scss\A         from line 5 of src/scss/style.scss\A \A 330:         position: relative;\A 331:         .xm-huang{ \A 332:             position: absolute;\A 333:             line-height: 59px;\A 334:             left：100％；\A 335:             height: 63px;\A 336:             width: 41px;\A 337:             background-position: -5px -914px;\A 338:             color: #fff;\A 339:         }\A 340:     }"; }
+  content: "Error: Invalid CSS after \"...      left：100%\": expected \"{\", was \";\"\A         on line 334 of src/scss/_index.scss\A         from line 5 of src/scss/style.scss\A \A 329:     .search-change{\A 330:         position: relative;\A 331:         .xm-huang{ \A 332:             position: absolute;\A 333:             line-height: 59px;\A 334:             left：100%;\A 335:             height: 63px;\A 336:             width: 41px;\A 337:             background-position: -5px -914px;\A 338:             color: #fff;\A 339:         }"; }
