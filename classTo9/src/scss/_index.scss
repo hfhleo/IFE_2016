@@ -273,7 +273,7 @@
 }
 
 .m-info{
-    border-radius: 5px;
+    border-radius: 8px;  
     box-sizing: border-box;
     overflow: hidden;
     border:1px solid #d7d5d6; 
@@ -297,7 +297,7 @@
     
     .xm-name{
         color: #aaa;
-        padding: 0 5px;
+        padding: 0 4px;
     }
     .u-selcet{
         border-radius: 0px;
@@ -320,18 +320,23 @@
     }
     .search-tj{
         text-align: left;
-        padding-left: 10%;
+        padding-left: 5%;
         width: 45%;
     }
     .sercher-button{
         padding-top: 15px;   
     }
     .search-change{
-        position: relative;
+        margin-right: 5%; 
+        .changeBox{
+            position: relative;
+            width: 178px;
+            margin: 0 auto;
+        }
         .xm-huang{  
             position: absolute;
             line-height: 59px;
-            left: 100%;
+            left: 178px;
             height: 63px; 
             width: 41px;
             background-position: -5px -914px;
@@ -557,7 +562,11 @@
             }
         }
         .tab-body{
+            
+            padding: 3%;
             margin-top: -1px;
+            border:1px solid #cdcacd; 
+            
             >li{
                 table{
                    width: 100%;
@@ -664,7 +673,49 @@
             padding: 0 20px;
         }
         .change{
-            padding: 0 10px;
+            padding: 6px 0;
+            
+            >div{
+                box-sizing: border-box;
+                display: block;
+                float: left;
+                cursor: pointer;
+            }
+            .tip-date{
+                text-align: center;
+                border:1px solid #aaa;
+                height: 23px;
+                line-height: 23px;
+                width: 22%;
+                margin-right: 0%;
+                
+            }
+            .u-select {
+                width: 23%;
+                margin-right: 2%;
+                
+                &.year{
+                    width: 26%;
+                }
+                
+                >.u-hd{
+                    width: auto;
+                    padding: 0;
+                    padding-right: 15px;
+                    text-align: center;
+                }
+                .tran{
+                    position: absolute;
+                    left: 50%;
+                    margin-left: 25%;
+                    top: 9px;
+                    height: 0;
+                    width: 0;
+                    border: 5px solid #fff;
+                    border-bottom-color: transparent;
+                    border-top-color: #aaa;
+                }
+            }
         }
         
         .date-body,
@@ -695,7 +746,7 @@
                     color: darkred;
                 }
                 &.active{
-                    border-color: #aaa;
+                    border-color: #f8d573;
                 }
             }
         }
