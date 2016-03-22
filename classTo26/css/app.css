@@ -1,0 +1,216 @@
+/*
+    css reset
+*/
+body,div,h1,h2,h3,h4,h5,h6{
+    padding: 0;
+    margin: 0;
+}
+ul,li,{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    font: 14px/1.5 'Microsoft Yahei';
+}
+html,
+.space{
+    min-width: 1200px;
+    min-height: 800px;
+}
+
+/*
+    舞台初始化
+*/
+
+.space{
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #fff;
+}
+
+.game-view{
+    position: relative;
+    height: 100%;
+    overflow: hidden;
+}
+
+.console{
+    position: relative;
+    float: right;
+    height: 100%;
+    width: 250px;
+    background: rgba(0,0,0,.1);
+}
+
+.game-user-info{
+    position: absolute;
+    height: 186px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    border-top: 1px solid #c8c8c8;
+    background: #f3f3f3;
+}
+
+/*
+    细化
+*/
+
+.console h3{
+    height: 29px;
+    line-height: 29px;
+    padding: 0 10px;
+    border-bottom: 1px solid #ccc;
+    color: #343434;
+    font-weight: 100;
+    font-size: 14px;
+}
+
+.console .console-msg{
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 0 10px;
+    overflow: hidden;
+    overflow-y: auto;
+}
+.console .console-msg p{
+    line-height: 25px;
+    font-size: 12px;
+}
+
+.user-face{
+    position: absolute;
+    left: 30px;
+    top: -150px; 
+    height: 380px;
+    width: 200px;
+    background: url('../imgs/rewu1.png') no-repeat;
+    background-size: contain;
+}
+.user-console{
+    margin-left: 240px;
+    height: 100%;
+}
+.user-console .msg{
+    height: 100%;
+    padding: 20px 15px 0; 
+}
+.game-stage{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 187px;
+}
+.u-button{
+    width: 140px;
+    height: 30px;
+    color: #fff;
+    background: #139ADE;
+    border: none;
+    outline: none;
+    border-radius: 50px;
+    border-bottom: 2px solid #036FA7;
+    cursor: pointer;
+    transition: .1s background ease-out;
+}
+.u-button:hover{
+    background: #036FA7;
+}
+
+.u-button.blue,
+.u-button.red,
+.u-button.default{
+    background: #fff;
+    color: #343434;
+    border:1px solid #ccc;
+    border-bottom: 2px solid #ccc;
+    width: 100px;
+}
+.u-button.default:hover{
+    background: #ccc;
+}
+.u-button.blue{
+    background: #139ADE;
+    color: #fff;
+    border: 1px solid #036FA7;
+}
+.u-button.blue:hover{
+     background: #036FA7;
+}
+.u-button.red{
+    background: #DA0E0E;
+    color: #fff;
+    border: 1px solid #710505;
+}
+.u-button.red:hover{
+     background: #710505;
+}
+/*
+    中心
+*/
+.spaceAdd{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    margin-left: -140px;
+    margin-top: -140px;
+    width: 279px;
+    height: 279px;
+    border:1px solid #ccc;
+    background: #f2f2f2;
+    border-radius: 50%;
+    line-height: 280px;
+    text-align: center;
+    font-size: 48px;
+    color: #c9c9c9;
+    cursor: pointer;
+}
+.HJlist .item{
+    margin-bottom: 10px; 
+}
+/*
+    小船
+*/
+.ship{
+    position: absolute;
+    width: 20px;
+    padding: 10px 10px;
+    height: 100px;
+    border: 1px solid #c4c4c4;
+    border-radius: 50% 50% 0 0;
+    overflow: hidden;
+    text-align: center;
+    line-height: 20px;
+    color: #343434;
+    /**/
+    right: 10px;
+    bottom: 10px;
+}
+.ship .name{
+    position: relative;
+    z-index: 99;
+}
+.powerBox{
+    position: absolute;
+    left: 0;
+    top: 40%;
+    bottom: 0;
+    right: 0;
+    background: #ccc;
+    z-index: 88;
+}
+.power{
+    position: absolute;
+    bottom: 5px;
+    left: -4%;
+    z-index: 99;
+}
