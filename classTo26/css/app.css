@@ -1,7 +1,7 @@
 /*
     css reset
 */
-body,div,h1,h2,h3,h4,h5,h6{
+body,div,h1,h2,h3,h4,h5,h6,p{
     padding: 0;
     margin: 0;
 }
@@ -105,10 +105,10 @@ html,
 }
 .game-stage{
     position: absolute;
+    width: 1100px;
+    height: 700px;
     left: 0;
-    right: 0;
     top: 0;
-    bottom: 187px;
 }
 .u-button{
     width: 140px;
@@ -154,6 +154,11 @@ html,
 .u-button.red:hover{
      background: #710505;
 }
+.game-user-info .HJlist button[disabled],
+.game-user-info .HJlist button:disabled{  
+    background: #ccc;
+    border-color: #ccc;
+}
 /*
     中心
 */
@@ -182,22 +187,18 @@ html,
 */
 .ship{
     position: absolute;
-    width: 20px;
-    padding: 10px 10px;
-    height: 100px;
+    width: 64px;
+    height: 64px;
     border: 1px solid #c4c4c4;
-    border-radius: 50% 50% 0 0;
+    border-radius: 50%;
     overflow: hidden;
     text-align: center;
-    line-height: 20px;
     color: #343434;
-    /**/
-    right: 10px;
-    bottom: 10px;
 }
 .ship .name{
     position: relative;
     z-index: 99;
+    line-height: 51px;
 }
 .powerBox{
     position: absolute;
@@ -209,8 +210,50 @@ html,
     z-index: 88;
 }
 .power{
-    position: absolute;
-    bottom: 5px;
-    left: -4%;
+    position: relative;
     z-index: 99;
+        top: -15px;
 }
+
+
+.ship-road0,
+.ship-road1,
+.ship-road2,
+.ship-road3{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    text-align: center;
+}
+.ship-road0{
+    margin-left: -180px;
+    margin-top: -180px;
+    width: 359px;
+    height: 359px;
+}
+.ship-road1{
+    margin-left: -230px;
+    margin-top: -230px;
+    width: 459px;
+    height: 459px; 
+}
+.ship-road2{ 
+    margin-left: -275px;
+    margin-top: -275px;
+    width: 549px;
+    height: 549px;
+}
+.ship-road3{
+    margin-left: -320px;
+    margin-top: -320px;
+    width: 639px;
+    height: 639px;
+}
+
+
+
+
+
+

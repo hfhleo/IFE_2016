@@ -14,72 +14,79 @@
         <div class="game-view">
             <div class="game-stage">
                 <div class="spaceAdd">
-                    加油站
+                    航空母舰
                 </div>
-                <div class="ship">
-                    <div class="powerBox"> </div>
-                    <span class="name">1号航舰</span>
-                    <span class="power">
-                        100% 
-                    </span>
-                    
-                </div> 
+                <div class="ship-road0"></div>
+                <div class="ship-road1"></div>
+                <div class="ship-road2"></div>
+                <div class="ship-road3"></div>
             </div>
             <div class="game-user-info">
                 <div class="user-face"></div>
                 <div class="user-console">
                     <div class="msg">
                         <div class="HJlist" id="">
-                            <div class="item" data-id="1">
+                            <div class="item" data-id="0">
                                 <span class="name">对1号航舰进行控制：</span>
-                                <button class="u-button blue" id="creat">
+                                <button class="u-button blue" data-type="creat">
                                     创建
                                 </button>
-                                <button class="u-button default">
+                                <button class="u-button default" data-type="destroy"  disabled>
+                                    销毁
+                                </button>
+                                <button class="u-button default" data-type="fly" disabled>
                                     开始飞行
                                 </button>
-                                <button class="u-button default">
+                                <button class="u-button default" data-type="stop" disabled>
+                                    停止飞行
+                                </button>
+                                
+                            </div>
+                            <div class="item" data-id="1">
+                                <span class="name">对2号航舰进行控制：</span>
+                                <button class="u-button blue" data-type="creat">
+                                    创建
+                                </button>
+                                <button class="u-button default" data-type="destroy"  disabled>
+                                    销毁
+                                </button>
+                                <button class="u-button default" data-type="fly" disabled>
+                                    开始飞行
+                                </button>
+                                <button class="u-button default" data-type="stop" disabled>
                                     停止飞行
                                 </button>
                                 
                             </div>
                             <div class="item" data-id="2">
-                                <span class="name">对2号航舰进行控制：</span>
-                                <button class="u-button blue">
-                                    创建
-                                </button>
-                                <button class="u-button default">
-                                    开始飞行
-                                </button>
-                                <button class="u-button default">
-                                    停止飞行
-                                </button>
-                                
-                            </div>
-                            <div class="item" data-id="3">
                                 <span class="name">对3号航舰进行控制：</span>
-                                <button class="u-button blue">
+                                <button class="u-button blue" data-type="creat">
                                     创建
                                 </button>
-                                <button class="u-button default">
-                                    开始飞行
-                                </button>
-                                <button class="u-button default">
-                                    停止飞行
-                                </button>
-                            </div>
-                            <div class="item" data-id="4">
-                                <span class="name">对4号航舰进行控制：</span>
-                                <button class="u-button red">
+                                <button class="u-button default" data-type="destroy"  disabled>
                                     销毁
                                 </button>
-                                <button class="u-button default">
+                                <button class="u-button default" data-type="fly" disabled>
                                     开始飞行
                                 </button>
-                                <button class="u-button default">
+                                <button class="u-button default" data-type="stop" disabled>
                                     停止飞行
                                 </button>
-                                
+                            </div>
+                            <div class="item" data-id="3">
+                                <span class="name">对4号航舰进行控制：</span>
+                                <button class="u-button blue" data-type="creat">
+                                    创建
+                                </button>
+                                <button class="u-button default" data-type="destroy"  disabled>
+                                    销毁
+                                </button>
+                                <button class="u-button default" data-type="fly" disabled>
+                                    开始飞行
+                                </button>
+                                <button class="u-button default" data-type="stop" disabled>
+                                    停止飞行
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -87,6 +94,6 @@
             </div>
         </div>
     </div>
-    <script src="js/app.js"></script>
+    <script data-main="js/app.js" src="js/require.js"></script>
 </body>
 </html> 
