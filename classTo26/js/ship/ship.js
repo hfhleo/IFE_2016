@@ -111,6 +111,7 @@ define(['ship/base'], function(_) {
                 if (this.stateItems[id].power <= 0) {
                     this.stateItems[id].power = 0
                     this.stop(id, el);
+                    this.stateItems[id].state = 'stop';
                 }
                 
                 this.stateItems[id].power -= 0.1
