@@ -1,0 +1,113 @@
+*{
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+a{
+    text-decoration: none;
+}
+body{
+    padding: 10px 0;
+    height: 2000px;
+    color: #343434;
+}
+
+/*
+    button
+*/
+
+.ui_button{
+    display: inline-block;
+    font-size: 12px;
+    padding: 5px 10px;
+    border: 1px solid #ccc;
+    background: #fff;
+    border-radius: 3px;
+    cursor: pointer;
+    outline: none;
+    transition: .2s all ease;
+}
+.ui_button:hover{
+    background: #08c;
+    color: #fff;
+    border-color: #08c;
+}
+
+/*
+    other
+*/
+
+.style{
+    text-align: center;
+}
+
+/*
+    ui_pop
+*/
+
+.ui_pop_bg{
+    background: rgba(0,0,0,.2);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom:0;
+    z-index: 999999997;
+}
+.ui_pop_war{
+    position: fixed; 
+    left: 50%;
+    top: 50%;
+    background: #fff;
+    height: 220px;
+    width: 400px;
+    border:1px solid #ccc;
+    box-shadow: 0 0 1px rgba(0,0,0, .2);
+    z-index: 999999998;
+}
+.ui_pop_close{
+    position: absolute;
+    right: 10px;
+    top: 5px;
+    color: #333;
+    height: 18px;
+    width: 18px;
+    font-size: 12px;
+    font-weight: 100;
+    line-height: 18px;
+    text-align: center;
+    border-radius: 50%;
+    background: #ccc;
+    z-index: 99999999999;
+    cursor: pointer;
+    transition: .2s background ease;
+}
+.ui_pop_close:hover{
+    background: rgba(244,67,54, 1);
+    color: #fff;
+}
+.ui_pop_title{
+    height: 30px;
+    line-height: 30px;
+    color: #333;
+    border-bottom: 1px solid #ccc;
+    text-align: center;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
