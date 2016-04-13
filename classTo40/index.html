@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>task | 40</title>
+    <link rel="stylesheet" href="css/app.css">
+</head>
+<body>
+    <input type="text" id="time" style="margin:100px 0 0 100px;">
+    
+    
+    
+    
+    <template id="tem-ui-date">
+        <div class="ui-date-head">
+            <b class="ui-data-pre"></b>
+            <b class="ui-data-next"></b>
+
+            <div class="ui-data-select ui-year" id="j-data-year">
+                <div class="data-hd">
+                    <b class="data-icon"></b>
+                    <span></span>
+                </div>
+                <div class="data-bd">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ui-data-select ui-month" id="j-data-month">
+                <div class="data-hd">
+                    <b class="data-icon"></b>
+                    <span></span>
+                </div>
+                <div class="data-bd">
+                    <ul>  
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="ui-date-title"> 
+            <ul>
+
+            </ul>
+        </div>
+        <div class="ui-date-body" id="j-data-day">
+            <ul class="clearfix"></ul>
+        </div>
+    </template>
+    
+    <script src="js/moment-0.2.js"></script>
+    <script src="js/app.js"></script>
+    <script>
+        window.onload = function() {
+            
+            var time = document.getElementById('time');
+            
+            ui_date(time, {
+                template:'tem-ui-date',
+                date: '2016-01-06',
+//                minDate: '1992-02-15',
+//                maxDate: '2015-02-13',
+                complete: function(date) { 
+                    //选择好的回调函数
+                    console.log(date);   
+                }
+            })
+            time.onfocus()
+        };
+    </script>
+</body>
+</html>
