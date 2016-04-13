@@ -256,6 +256,8 @@ var ui_date = function(el, op) {
                 
                 el.value = date;
                 
+                op.complete && op.complete(date)
+                
                 _.event.blur();
                 
                 function addZero(n) {
