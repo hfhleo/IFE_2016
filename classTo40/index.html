@@ -11,7 +11,7 @@
     
     
     
-    <template id="tem-ui-date">
+    <script type="text/tempalate" id="tem-ui-date">
         <div class="ui-date-head">
             <b class="ui-data-pre"></b>
             <b class="ui-data-next"></b>
@@ -48,7 +48,7 @@
         <div class="ui-date-body" id="j-data-day">
             <ul class="clearfix"></ul>
         </div>
-    </template>
+    </script>
     
     <script src="js/moment-0.2.js"></script>
     <script src="js/app.js"></script>
@@ -64,7 +64,7 @@
 //                maxDate: '2015-02-13',
                 complete: function(date) { 
                     //选择好的回调函数
-                    console.log(date);   
+                    console.log(date);    
                 }
             })
             time.onfocus()

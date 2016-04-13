@@ -51,6 +51,19 @@ var ui_date = function(el, op) {
 
             }
         },
+        removeT:  function(obj, tag, method, cb) {
+            obj.removeEventListener(method, _fn, false);
+
+            function _fn(ev) {
+                var ev = ev || window.event;
+                var target = ev.target;
+
+                if (target.nodeName.toLowerCase() != tag) return false;
+
+                cb.call(target);
+
+            }
+        },
         
     }; 
     
@@ -230,40 +243,43 @@ var ui_date = function(el, op) {
             }
             
             //点击日期
-            $.on(dayBox, 'a', 'click', function() {
-                var day = this.innerHTML;
-                var year = yearS.innerHTML;
-                var month = monthS.innerHTML;
-                
-                var date = year + '-' + addZero(month) + '-' + addZero(day);
-                //var time =  moment().analysis(date);
-                //_.template.init(time);
-                var liAll = dayBox.getElementsByTagName('li');
-                
-                $.each(liAll, function(key, i) {
-                   
-                    (function(el){
-                        if (el.childNodes[0] && el.children[0].innerHTML == day) {
-                            
-                            el.className += ' active'
-                        } else {
-                            el.className = el.className.replace(/active/, '');
-                        }
-                    })(key)
-                })
-                
-                
-                
-                el.value = date;
-                
-                op.complete && op.complete(date)
-                
-                _.event.blur();
-                
-                function addZero(n) {
-                    return n < 10? '0' + n:n;
-                }
-            })
+            $.removeT(dayBox, 'a', 'click', _fn)
+            $.on(dayBox, 'a', 'click', _fn)
+                 
+                 
+            function _fn(){
+                    var day = this.innerHTML;
+                    var year = yearS.innerHTML;
+                    var month = monthS.innerHTML;
+                    var date = year + '-' + addZero(month) + '-' + addZero(day);
+                    //var time =  moment().analysis(date);
+                    //_.template.init(time);
+                    var liAll = dayBox.getElementsByTagName('li');
+
+                    $.each(liAll, function(key, i) {
+
+                        (function(el){
+                            if (el.childNodes[0] && el.children[0].innerHTML == day) {
+
+                                el.className += ' active'
+                            } else {
+                                el.className = el.className.replace(/active/, '');
+                            }
+                        })(key)
+                    })
+
+
+
+                    el.value = date;
+
+                    op.complete && op.complete(date)
+
+                    _.event.blur();
+
+                    function addZero(n) {
+                        return n < 10? '0' + n:n;
+                    }
+            }     
             
         },
         select: function() {
@@ -310,8 +326,7 @@ var ui_date = function(el, op) {
             el.onfocus = function() {
                 var time = moment().analysis(this.value)
                 _.template.render();
-                _.template.init(time)
-                _.event.init();
+                _.template.init(time) 
                 box.style.display = 'block'
             }
         },
