@@ -1,0 +1,56 @@
+//@color
+
+$mian-color:#42b983;
+
+.container{
+    padding: 10px 20px;
+}
+.center{
+    text-align: center;
+}
+//navbar
+.navbar{
+    height: 45px;
+    line-height: 45px;
+    padding: 0 60px;
+    color: #fff;
+    background: $mian-color;
+    
+    a{
+        color: #fff;
+    }
+}
+
+.clearfix:after,
+.clearfix:before{
+    content: '';
+    display: table;
+}
+.clearfix:after{
+    clear: both;
+}
+.clearfix{
+    *zoom:1;
+    overflow: hidden;
+}
+input{
+    border: 1px solid #ccc;
+    padding-left: 10px;
+    outline: none;
+}
+input:focus{
+    border-color: #4fc08d;
+}
+
+.seeBox{
+    h3{
+        padding-bottom: 15px;
+    }
+}
+.mapBox{
+    width: 800px;
+    height: 300px;
+    margin: 0 auto;
+    margin-bottom: 68px;
+    
+}
