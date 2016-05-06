@@ -5,6 +5,7 @@ import App from './components/app';
 import List from './views/list';
 import Creat from './views/creat';
 import See from './views/see';
+import Write from './views/write';
 
 
 Vue.config.debug = true;
@@ -29,12 +30,13 @@ router.map({
     '/edit/:id': {
         name: 'edit',
         component: Creat
+    },
+    '/write/:id': {
+        name: 'write',
+        component: Write
     }
 })
 
 
-router.beforeEach(function () {
-  window.scrollTo(0, 0)
-})
 
 router.start(App, '#app');    

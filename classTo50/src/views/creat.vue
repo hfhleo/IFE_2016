@@ -1,4 +1,5 @@
 <template>
+   {{$data.proInfo | json}}
     <div class="container">
        <div class="container form-title">
            <h2>表单名称</h2>
@@ -8,7 +9,7 @@
        </div>
         <ul class="form-list-info" v-for="item in proInfo" track-by="$index">
             <li>
-                <h2>{{$index + 1}}:{{item.title}}</h2> 
+                <h2>{{$index + 1}}:{{item.title}} <em class="must-should" v-if="item.must"><span>*</span></em></h2> 
                 <ol v-if=" item.type !== 'textarea' ">
                     <li v-for="list in item.content">
                         <b>{{$index+1}}:{{list.text}}</b>
@@ -67,7 +68,7 @@
                 </li>
             </ul>
         </div>
-        <!-- checkbox -->
+        <!-- checkbox or radio -->
         <div class="contentInfo" v-if=" proType.type && proType.type != 'textarea' ">
             <div class="form-pro-title">
                 <h4>标题</h4>
@@ -85,7 +86,7 @@
             <button class="btn btn-primary" @click="addPro">+</button>
         </div>
         
-        <!-- radio -->
+        <!-- textarea -->
         <div class="contentInfo" v-if=" proType.type && proType.type == 'textarea' ">
             <div class="form-pro-title">
                 <h4>标题</h4>
@@ -98,7 +99,7 @@
         <button class="btn btn-primary" @click="creat">
             创建问题
         </button>
-        
+        <input type="checkbox" v-model="ismust">必填吗？
     </div>
     <div class="container form-data">
         <div class="form-data-info">
@@ -109,10 +110,10 @@
         <date :datec.sync="datec"></date>
     </div>
     <div class="container center form-bottom otherp">
-        <button class="btn btn-primary" @click="end" v-link="'/'" v-if="$route.name == 'creat'">
+        <button class="btn btn-primary" @click="end" v-if="$route.name == 'creat'">
             问答创建完成
         </button>
-        <button class="btn btn-primary" @click="edit" v-link="'/'" v-else>
+        <button class="btn btn-primary" @click="edit" v-else> 
             问答编辑完成
         </button>
         <a class="btn btn-default" @click="changeType('q')" role="button" v-link="'/'">
@@ -132,14 +133,15 @@
             
             return {
                 formList:  serverData.formList,
+                ismust: false,
                 datec:{
                     isShow: false,
                     time: '',
-                    error: false,
+                    error: false, 
                     fn(i){
                         var oldTime = Date.now();
 
-                        if (oldTime > i) {
+                        if (oldTime >= i) {
                             this.time = '';
                             this.error = true;
                         } else {
@@ -179,7 +181,9 @@
                         formList: this.formList
                     })
                 }
-            }
+            },
+            
+            
         },
         
         filters: filter,
@@ -192,11 +196,12 @@
                 
                 data.checkbox = data.textarea = data.radio = [];
                 data.title = '';
+                this.ismust = false;
             },
             
             addPro() {
                 let type = this.proType.type;
-                this.proType[type].push({text: ''});
+                this.proType[type].push({text: '', pic: 0}); 
  
             },
             
@@ -208,15 +213,28 @@
             
             creat() {
                 let type = this.proType.type;
+                let content;
                 
                 if (!this.proType.title) return false;
                 
                 if (this.proInfo.length >= 10) return false;
                 
+                if(type == 'textarea'){
+                    content = [{
+                        text: '',
+                        yes: 0,
+                        no:0
+                    }]
+
+                } else {
+                    content = this.proType[type];
+                }
+                
                 this.proInfo.push({
                     title: this.proType.title,
                     type: type,
-                    content: this.proType[type]
+                    must: this.ismust,
+                    content: content
                 });
                 
                 //清空
@@ -250,11 +268,18 @@
             },
             
             end() {
-                let serverData = store.fetch();
+                
                 
                 if (!this.headTitle || !this.proInfo || this.datec.error) return false;
                 
-                this.allId++;
+                if (this.datec.time <= Date.now()) {
+                    this.datec.error = true;
+                    return false;
+                }
+                
+                this.datec.error = false;
+                
+                this.allId++; 
                 
                 this.formList.push({
                     id: this.allId,
@@ -267,16 +292,24 @@
                 
                 this.changeType('no');
                 this.headTitle = '';
+                
+                this.$router.go('/');
             },
             
             edit() {
-                let serverData = store.fetch();
+                
                 let self = this;
                 
                 if (!this.headTitle || !this.proInfo || this.datec.error  ) return false;
                 
-                console.log(this.datec.time)
+                if (this.datec.time <= Date.now()) {
+                    this.datec.error = true;
+                    return false;
+                }
                 
+                this.datec.error = false;
+                
+          
                 this.formList.forEach(function(key, i) {
                     if (key.id == self.$route.params.id) {
                         
@@ -293,6 +326,8 @@
                 })
                 
                 this.headTitle = '';
+                
+                this.$router.go('/');
             }
             
         },
@@ -307,7 +342,6 @@
                     this.proInfo = [];
                     this.headTitle = [];
                     this.time = '';
-                    this.datec.time = '';
                     this.proType.type = '';
                     return false;
                 }; 

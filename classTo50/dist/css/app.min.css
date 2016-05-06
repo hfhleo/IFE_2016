@@ -83,6 +83,21 @@ input:focus {
 /*
     @table
 */
+.table-content {
+  position: relative;
+}
+
+.table-l {
+  position: absolute;
+  left: 0;
+  top: 21px;
+  width: 25px;
+}
+
+.table-r {
+  margin-left: 25px;
+}
+
 .table {
   width: 100%;
 }
@@ -98,6 +113,10 @@ input:focus {
 .table td {
   font-size: 12px;
   border-bottom: 1px solid #ccc;
+}
+.table .tab-btn {
+  text-align: left;
+  box-sizing: border-box;
 }
 
 /*
@@ -137,6 +156,13 @@ input:focus {
 .btn.btn-other:hover {
   color: #fff;
   background: #E271A5;
+}
+.btn.btn-blue {
+  border: 1px solid #08c;
+}
+.btn.btn-blue:hover {
+  color: #fff;
+  background: #08c;
 }
 
 /*
@@ -493,4 +519,13 @@ input:focus {
 }
 .error i {
   font-style: normal;
+}
+
+.must-should {
+  font-size: 15px;
+  font-style: normal;
+}
+.must-should span {
+  color: red;
+  vertical-align: text-top;
 }

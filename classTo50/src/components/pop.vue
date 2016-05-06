@@ -6,7 +6,7 @@
         <h4 class="modal-title" id="gridModalLabel">提示：</h4>
     </div>
     <div class="modal-body">
-        <div class="col-md-4">你确定要删除吗？</div>
+        <div class="col-md-4">{{pop.msg}}</div>
     </div>
     <div class="modal-footer center">
         <button type="button" class="btn btn-default" @click="close">关闭</button>
@@ -18,26 +18,35 @@
 
 <script>
     export default{
-        props:['pop', 'formList'],
+        props:['pop', 'formList', 'checks'],
         methods: {
             
             del(){
                 var self = this;
-              
-                this.formList.forEach(function(key, i) {
+                var formList = this.formList;
+                var checks = this.checks;
+                var popId = this.pop.id;
+                
+                for(var i = 0; i < formList.length; i++) {
                     
-                    if (self.pop.id == key.id) {
-                        self.formList.splice(i, 1)
+                    for(var k = 0; k < popId.length; k++) {
+                        
+                        if(popId[k] == formList[i].id) {
+                            formList.splice(i, 1);
+                            checks.splice(i,1);
+                        };
+                        
                     }
-                     
-                })
+                    
+                };
+                
                 
                 this.close();
                  
             },
             
             close() {
-                this.pop.id = 0;
+                this.pop.id = [];
                 this.pop.isShowPop = false
             }
         }

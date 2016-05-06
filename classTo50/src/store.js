@@ -15,97 +15,56 @@ if (!localStorage.getItem(key)) {
         
         // 调查列表列表
         formList: [
+            
             {
                 id: 2,
-                title: '示例介绍1', 
-                state: 'draft', //有三种状态   end：结束 draft:未发布 sent:发布中
-                now: now,
-                end: now + 1000 * 60 * 60 * 24 * 50,
-                form:[
-                        {
-                            "title":"meiki",
-                            "type":"checkbox",
-                            "content":[
-                                {
-                                    "text":"problr for 1",
-                                    'pic':'15'
-                                },
-                                {
-                                    "text":"problr for 2",
-                                    'pic':'45'
-                                },
-                                {
-                                    "text":"problr for 3",
-                                    'pic':'6'
-                                }
-                            ]
-                        },
-                        {
-                            "title":"loki",
-                            "type":"radio",
-                            "content":[
-                                {
-                                    "text":"proLife for 1",
-                                    'pic':'80'
-                                },
-                                {
-                                    "text":"proLife for 2",
-                                    'pic':'15'
-                                },
-                                {
-                                    "text":"proLife for 3",
-                                    'pic':'66'
-                                }
-                            ]
-                        }
-                    ]
-            },
-            {
-                id: 3,
-                title: '示例介绍2',
-                state: 'draft', //有三种状态   end：结束 draft:未发布 sent:发布中
-                now: now,
-                end: now + 1000 * 60 * 60 * 24 * 50,
-                form:[
-                        {
-                            "title":"oop",
-                            "type":"checkbox",
-                            "content":[
-                                {
-                                    "text":"opp js?",
-                                    'pic':'67'
-                                },
-                                {
-                                    "text":"oop java?",
-                                    'pic':'2'
-                                },
-                                {
-                                    "text":"oop ruby?",
-                                    'pic':'70'
-                                }
-                            ]
-                        },
-                        {
-                            "title":"oop for python?",
-                            "type":"textarea",
-                            "content":[{
-                                text:"",
-                                yes:'80',
-                                no: '30'
-                            }]
-                        }
-                    ]
-            },
-            {
-                id: 4,
-                title: '网络游戏报告',
+                title: '示例1',
                 state: 'sent', //有三种状态   end：结束 draft:未发布 sent:发布中
                 now: now,
                 end: now + 1000 * 60 * 60 * 24 * 50,
                 form:[
                         {
+                            "title":"你写什么类型的 JavaScript?",
+                            "type":"checkbox",
+                            'must': true,
+                            "content":[
+                                {
+                                    "text":"web端程?",
+                                    'pic':'67',
+                                },
+                                {
+                                    "text":"服务端?",
+                                    'pic':'2',
+                                },
+                                {
+                                    "text":"Tessel?",
+                                    'pic':'70',
+                                }
+                            ]
+                        },
+                        {
+                            "title":"你写测试吗?",
+                            "type":"textarea",
+                            'must': false,
+                            "content":[{
+                                text:"",
+                                yes:'80',
+                                no: '30',
+                            }]
+                        }
+                    ]
+            },
+            {
+                id: 3,
+                title: '示例2',
+                state: 'end', //有三种状态   end：结束 draft:未发布 sent:发布中
+                now: now,
+                end: now - 1000 * 10,
+                form:[
+                        {
                             "title":"性别",
                             "type":"radio",
+                            'must': false,
                             "content":[
                                 {
                                     "text":"男",
@@ -121,6 +80,7 @@ if (!localStorage.getItem(key)) {
                         {
                             "title":"年级",
                             "type":"radio",
+                            'must': true,
                             "content":[
                                 {
                                     "text":"大一",
@@ -144,6 +104,7 @@ if (!localStorage.getItem(key)) {
                         {
                             "title":"你喜欢以下什么游戏？",
                             "type":"checkbox",
+                            'must': false,
                             "content":[
                                 {
                                     "text":"龙之谷",
@@ -178,6 +139,7 @@ if (!localStorage.getItem(key)) {
                         {
                             "title":"接触网游的原因",
                             "type":"textarea",
+                            "must": false,
                             "content":[{ 
                                 text:"",
                                 yes:'80',
@@ -186,6 +148,45 @@ if (!localStorage.getItem(key)) {
                         }
                     ]
             },
+            {
+                id: 4,
+                title: '示例3',
+                state: 'draft', //有三种状态   end：结束 draft:未发布 sent:发布中
+                now: now,
+                end: now + 1000 * 60 * 60 * 24 * 50,
+                form:[
+                        {
+                            "title":"您对英雄联盟网站内容的满意程度如何？",
+                            "type":"checkbox",
+                            'must': true,
+                            "content":[
+                                {
+                                    "text":"满意",
+                                    'pic':'0'
+                                },
+                                {
+                                    "text":"一般",
+                                    'pic':'0'
+                                },
+                                {
+                                    "text":"不满意",
+                                    'pic':'0'
+                                }
+                            ]
+                        },
+                        {
+                            "title":"对游戏模式有什么想法?",
+                            "type":"textarea",
+                            'must': false,
+                            "content":[{
+                                text:"",
+                                yes:'0',
+                                no: '0'
+                            }]
+                        }
+                    ]
+            },
+            
         ],
          
         // 查看数据详情

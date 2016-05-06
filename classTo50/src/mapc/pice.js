@@ -14,7 +14,7 @@ var data = function(op){
     
     
     var option = {
-        color:['#42b983','#52C5FF', '#ff6e5c', '#c08'],    
+        color:['#42b983','#52C5FF', '#ff6e5c'],    
         tooltip: {
             trigger: 'item',
             formatter: "{a} <br/>{b}: {c} ({d}%)"

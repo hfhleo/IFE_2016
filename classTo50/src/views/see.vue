@@ -34,9 +34,18 @@
                 var self = this;
                 
                 data.forEach(function(key, i) {
+                    
                     if (key.id == id) {
+                        
+                        
+                        //@ 如果状态为'draft'时，禁止查看，并返回首页
+                        if (key.state == 'draft') {
+                            self.$router.go('/')
+                            return false;
+                        }
+                        
                         self.$data.formList = key;
-                    }
+                    } 
                 })
             }
         },
